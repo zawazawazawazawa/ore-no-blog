@@ -1,0 +1,9 @@
+<h1>Show</h1>
+
+<h3>Title</h3>
+<%= @diary.title %>
+<br><br>
+<h3>Body</h3>
+<%= @diary.body %>
+
+<%= link_to "Delete", diary_path(@diary.id), method: :delete, data:{confirm:"Are you sure?"} %>
