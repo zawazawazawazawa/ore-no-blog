@@ -6,4 +6,5 @@
 <h3>Body</h3>
 <%= @diary.body %>
 
-<%= link_to "Delete", diary_path(@diary.id), method: :delete, data:{confirm:"Are you sure?"} %>
+<%= link_to "Edit", edit_diary_path %>
+<%= link_to "Delete", diary_path, method: :delete, data:{confirm:"Are you sure?"} %>

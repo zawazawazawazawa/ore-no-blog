@@ -1,8 +1,10 @@
 <h1>Index</h1>
 
+<%= link_to "Write", new_diary_path %>
+
 <% @diaries.each do |diary| %>
   <p>title</p>
-  <p><%= diary.title %></p>
+  <%= link_to diary.title, diary%></p>
   <p>body</p>
   <p><%= diary.body %></p>
 <% end %>
