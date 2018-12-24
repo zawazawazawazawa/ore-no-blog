@@ -14,7 +14,6 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
   host: localhost
 
 development:
@@ -50,5 +49,6 @@ test:
 production:
   <<: *default
   database: ore-no-blog_production
-  username: ore-no-blog
-  password: <%= ENV['ORE-NO-BLOG_DATABASE_PASSWORD'] %>
+  username: root 
+  password: <%= ENV['ORE_NO_BLOG_DATABASE_PASSWORD'] %>
+  host: ore-no-blog-db-instance.c59rxc2rc1ux.ap-northeast-1.rds.amazonaws.com
