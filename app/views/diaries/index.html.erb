@@ -1,8 +1,4 @@
-<h1>Index</h1>
-
 <% @diaries.each do |diary| %>
-  <p>title</p>
-  <%= link_to diary.title, diary%></p>
-  <p>body</p>
+  <h3><%= link_to diary.title, diary%></h3>
   <p><%= diary.body %></p>
 <% end %>
