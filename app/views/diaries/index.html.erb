@@ -1,8 +1,8 @@
-<h1>Index</h1>
-
 <% @diaries.each do |diary| %>
-  <p>title</p>
-  <%= link_to diary.title, diary%></p>
-  <p>body</p>
-  <p><%= diary.body %></p>
+  <h3><%= link_to diary.title, diary%></h3>
+  <% if diary.body.length <= 30 %>
+    <p><%= diary.body %></p>
+  <% else %>
+    <p><%= diary.body[0, 30] + '...' %></p>
+  <% end %>
 <% end %>

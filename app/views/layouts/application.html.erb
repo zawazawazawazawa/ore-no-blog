@@ -18,18 +18,21 @@
 
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Write", new_diary_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
+          <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Write", new_diary_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Change Profile', edit_user_registration_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              </li>
+          <% else %>
+              <li>
+                <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
+              </li>
+          <% end %>
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -37,6 +40,8 @@
         </form> -->
       </div>
     </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
