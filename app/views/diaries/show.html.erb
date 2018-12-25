@@ -1,5 +1,7 @@
 <h3><%= @diary.title %></h3>
 <p><%= @diary.body %></p>
 
-<%= link_to "Edit", edit_diary_path %><br>
-<%= link_to "Delete", diary_path, method: :delete, data:{confirm:"Are you sure?"} %>
+<% if user_signed_in? %>
+  <%= link_to "Edit", edit_diary_path %><br>
+  <%= link_to "Delete", diary_path, method: :delete, data:{confirm:"Are you sure?"} %>
+<% end %>

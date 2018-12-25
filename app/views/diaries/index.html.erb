@@ -1,4 +1,8 @@
 <% @diaries.each do |diary| %>
   <h3><%= link_to diary.title, diary%></h3>
-  <p><%= diary.body %></p>
+  <% if diary.body.length <= 30 %>
+    <p><%= diary.body %></p>
+  <% else %>
+    <p><%= diary.body[0, 30] + '...' %></p>
+  <% end %>
 <% end %>
